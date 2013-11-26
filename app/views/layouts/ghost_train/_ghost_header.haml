@@ -1,0 +1,21 @@
+%header#global-header.navbar
+  %a.ghost-logo{"data-off-canvas" => "left", href: "http://my-ghost-blog.com", title: "http://my-ghost-blog.com"}
+    %span.hidden Ghost
+  %nav#global-nav{role: "navigation"}
+    %ul#main-menu
+      %li.content.active
+        %a{href: "#"} Content
+      %li.editor
+        %a{href: "#"} New Post
+      %li.settings
+        %a{href: "#"} Settings
+      %li#usermenu.subnav
+        %a.dropdown{"data-toggle" => "ul", href: "#"}
+          %img.avatar{alt: "Avatar", src: "#"}
+          %span.name UserName
+        %ul.overlay{style: "display: none;"}
+          %li.usermenu-profile
+            %a{href: "#"} Your Profile
+          %li.divider
+          %li.usermenu-signout
+            %a{href: "#"} Sign Out
