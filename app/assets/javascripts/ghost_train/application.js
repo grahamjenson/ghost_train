@@ -18,9 +18,8 @@
 //= require_self
 
 window.JST = {}
-_.map(HandlebarsTemplates, function(v,k) {  JST[k.replace(/^ghost\/client\/tpl\//,'')] = v; });
+_.map(HandlebarsTemplates, function(v,k) {  JST[k.replace(/^ghost\/core\/client\/tpl\//,'')] = v; });
 
 //_.HandlebarsTemplates['ghost/client/tpl/forgotten']()
 $('body').addClass('editor')
 console.log('init');
-Ghost.init()

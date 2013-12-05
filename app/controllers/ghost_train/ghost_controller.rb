@@ -11,12 +11,19 @@ module GhostTrain
     end
     
     def post_show
+#      GhostPosts.find(params[:id])
       post = FactoryGirl.build(:ghost_post, :id => params[:id])
       render json: post
     end
 
     def post_save
       render json: {}
+    end
+
+    def new_post
+#      GhostPosts.find(params[:id])
+      post = FactoryGirl.build(:ghost_post)
+      render json: post
     end
 
     def tags
@@ -34,5 +41,6 @@ module GhostTrain
     def editor
       @fileStorage = true
     end
+
   end
 end
