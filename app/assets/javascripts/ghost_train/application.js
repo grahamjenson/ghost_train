@@ -22,4 +22,5 @@ _.map(HandlebarsTemplates, function(v,k) {  JST[k.replace(/^ghost\/client\/tpl\/
 
 //_.HandlebarsTemplates['ghost/client/tpl/forgotten']()
 $('body').addClass('editor')
+console.log('init');
 Ghost.init()

@@ -9,6 +9,6 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require ghost/client/assets/sass/screen
+ *= require ghost/core/client/assets/sass/screen
  *= require_tree .
  */

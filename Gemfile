@@ -23,6 +23,8 @@ gem 'factory_girl_rails'
 gem 'faker'
 gem 'rspec-rails'
 
+gem 'bourbon'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

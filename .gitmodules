@@ -1,0 +1,3 @@
+[submodule "vendor/assets/javascripts/ghost"]
+	path = vendor/assets/javascripts/ghost
+	url = git@github.com:grahamjenson/Ghost.git

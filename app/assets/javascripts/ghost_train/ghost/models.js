@@ -1,1 +1,1 @@
-//= require_tree ../../../../../vendor/assets/javascripts/ghost/client/models
+//= require_tree ../../../../../vendor/assets/javascripts/ghost/core/client/models

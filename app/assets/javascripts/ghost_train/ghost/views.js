@@ -1,2 +1,2 @@
-//= require_tree ../../../../../vendor/assets/javascripts/ghost/client/views
-//= require ghost/client/router.js
+//= require_tree ../../../../../vendor/assets/javascripts/ghost/core/client/views
+//= require ghost/core/client/router.js

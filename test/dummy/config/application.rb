@@ -5,6 +5,9 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 require "ghost_train"
 
+
+require  File.expand_path('../../../../spec/factories/ghost', __FILE__)
+
 module Dummy
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
