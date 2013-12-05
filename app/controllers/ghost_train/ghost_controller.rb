@@ -3,11 +3,10 @@ module GhostTrain
   class GhostController < ApplicationController
 
     def index
-      
     end
 
     def posts
-      render json: {}
+      render json: FactoryGirl.build(:ghost_posts)
     end
     
     def post_show

@@ -5,6 +5,16 @@ end
 
 FactoryGirl.define do
 
+  factory :ghost_posts , class:Hash do
+    page 1
+    pages 1
+    limit 15
+    total 2
+    posts {[FactoryGirl.build(:ghost_post), FactoryGirl.build(:ghost_post)]}
+    
+    initialize_with { stringerize_keys attributes } 
+  end
+
   factory :ghost_post, class:Hash do
     sequence(:id)
     uuid "058f77ad-03c3-4e3c-91ea-64a5bde50a94"

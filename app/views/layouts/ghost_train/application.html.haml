@@ -6,7 +6,7 @@
     = stylesheet_link_tag    "ghost_train/application", media: "all"
     %meta{:name => 'csrf-param', :content => form_authenticity_token}
     %meta{:name => 'csrf-token', :content => form_authenticity_token}
-  %body.body
+  %body.manage.body
     = render partial: 'layouts/ghost_train/ghost_header'
     %main#main
       = yield
