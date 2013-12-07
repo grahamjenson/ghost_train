@@ -2,43 +2,79 @@ module GhostTrain
 
   class GhostController < ApplicationController
 
-    def index
+    #Things that shouldnt be here, but they are --graham
+    def content
+      render 'index'
     end
 
-    def posts
-      render json: FactoryGirl.build(:ghost_posts)
-    end
-    
-    def post_show
-#      GhostPosts.find(params[:id])
-      post = FactoryGirl.build(:ghost_post, :id => params[:id])
-      render json: post
-    end
-
-    def post_save
-      render json: {}
-    end
-
-    def new_post
-#      GhostPosts.find(params[:id])
-      post = FactoryGirl.build(:ghost_post)
-      render json: post
-    end
-
-    def tags
-      render json: [FactoryGirl.build(:ghost_tag)]
-    end
-
-    def uploadimage
+    def upload
       #must return a url with a link to the uploaded image
       uploadimage = params[:uploadimage]
-      uploader = GhostTrain::GhostImageUploader.new
+      uploader = get_uploader
       uploader.store!(uploadimage)
       render :inline => uploader.url
     end
 
-    def editor
-      @fileStorage = true
+    def tags
+      tags = get_tags
+      render json: tags 
+    end
+
+    #Posts API stuff
+    def index
+      posts = get_posts
+      render json: posts
+    end
+    
+    def show
+      post =  get_post(params[:id])
+      render json: post
+    end
+
+    def update
+      post = update_post(params)
+      render json: post
+    end
+
+    def create
+      post = create_post(params)
+      render json: post
+    end
+
+    def edit
+      @fileStorage = !!get_uploader
+      render 'editor'
+    end
+
+    def new
+      @fileStorage = !!get_uploader
+      render 'editor'
+    end
+
+    protected
+    #required things
+    def get_tags
+      raise NotImplementedError
+    end
+
+    def get_posts
+      raise NotImplementedError
+    end
+
+    def get_post(id)
+      raise NotImplementedError
+    end
+
+    def update_post(params)
+      raise NotImplementedError
+    end
+
+    def create_post(params)
+      raise NotImplementedError
+    end
+
+    def get_uploader
+      nil
     end
 
   end
