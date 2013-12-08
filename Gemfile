@@ -8,6 +8,7 @@ gemspec
 gem 'haml-rails'
 gem 'handlebars_assets'
 gem 'handlebars-rails'
+gem 'bourbon'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

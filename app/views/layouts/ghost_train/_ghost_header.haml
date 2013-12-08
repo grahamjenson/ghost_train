@@ -13,7 +13,7 @@
           %span.name UserName
         %ul.overlay{style: "display: none;"}
           %li.usermenu-profile
-            = link_to 'Your Profile', main_app.user_path(1)
+            = link_to 'Your Profile', (main_app.respond_to?(:user_path) ? main_app.users_path : posts_path)
           %li.divider
           %li.usermenu-signout
-            = link_to 'Sign Out', main_app.sign_out_path
+            = link_to 'Sign Out', main_app.destroy_user_session_path

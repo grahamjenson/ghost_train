@@ -3,7 +3,9 @@ GhostTrain::Engine.routes.draw do
   
 
   post 'upload/' => 'ghost#upload'
+  
   root 'ghost#content', as: :posts
+
   get 'editor/:id' => 'ghost#edit', as: :edit_post 
   get 'editor' => 'ghost#new', as: :new_post
 

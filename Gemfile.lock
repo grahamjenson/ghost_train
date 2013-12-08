@@ -159,6 +159,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bourbon
   carrierwave
   factory_girl_rails
   faker

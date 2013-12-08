@@ -27,7 +27,7 @@ FactoryGirl.define do
     featured 0
 
     markdown "#hi\nmy name is graham"
-    html "<h1 id=\"hi\">hi</h1>\n\n<p>my name is graham</p>"
+    html "<h5 id=\"hi\">fjsaofjoas</h5>\n\n<p>my namsaodojiasm</p>"
 
     status "published"
     language "en_US"
