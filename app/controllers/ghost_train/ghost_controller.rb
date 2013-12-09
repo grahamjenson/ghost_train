@@ -32,12 +32,12 @@ module GhostTrain
     end
 
     def update
-      post = update_post(params)
+      post = update_post(params[:ghost])
       render json: post
     end
 
     def create
-      post = create_post(params)
+      post = create_post(params[:ghost])
       render json: post
     end
 
