@@ -32,7 +32,7 @@ module GhostTrain
     end
 
     def update
-      post = update_post(params[:ghost])
+      post = update_post(params[:id], params[:ghost])
       render json: post
     end
 
@@ -65,7 +65,7 @@ module GhostTrain
       raise NotImplementedError
     end
 
-    def update_post(params)
+    def update_post(id, params)
       raise NotImplementedError
     end
 
