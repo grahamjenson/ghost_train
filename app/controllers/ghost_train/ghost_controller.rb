@@ -2,8 +2,10 @@ module GhostTrain
 
   class GhostController < ApplicationController
 
+
     #Things that shouldnt be here, but they are --graham
     def content
+      @messages = get_messages
       render 'index'
     end
 
@@ -43,11 +45,17 @@ module GhostTrain
 
     def edit
       @fileStorage = !!get_uploader
+      
+      @messages = get_messages
+      
       render 'editor'
     end
 
     def new
       @fileStorage = !!get_uploader
+
+      @messages = get_messages
+
       render 'editor'
     end
 
@@ -71,6 +79,10 @@ module GhostTrain
 
     def create_post(params)
       raise NotImplementedError
+    end
+
+    def get_messages
+      []
     end
 
     def get_uploader
