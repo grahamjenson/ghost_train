@@ -40,6 +40,7 @@ module GhostTrain
 
     def create
       post = create_post(params[:ghost])
+      #render json: post, status: 403
       render json: post
     end
 

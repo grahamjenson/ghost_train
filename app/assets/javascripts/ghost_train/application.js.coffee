@@ -33,7 +33,7 @@ old_parse = Ghost.Models.Post.prototype.parse
 new_parse = (data) ->
     d = old_parse(data)
     console.log d
-    if not d.html
+    if not d.html and d.markdown
       d.html = converter.makeHtml(d.markdown)
     d
 
