@@ -1,0 +1,10 @@
+%li#usermenu.subnav
+  %a.dropdown{"data-toggle" => "ul", href: "#"}
+    %img.avatar{alt: "Avatar", src: "#"}
+    %span.name UserName
+  %ul.overlay{style: "display: none;"}
+    %li.usermenu-profile
+      = link_to 'Your Profile', 'users_path'
+    %li.divider
+    %li.usermenu-signout
+      = link_to 'Sign Out', 'sign_out_path'

@@ -17,6 +17,7 @@
 #= require ghost_train/ghost/views
 #= require ghost_train/front_markdown
 #= require ghost_train/editor_markdown
+#= require ghost_train/preview_markdown
 #= require customizations
 #= require_self
 
@@ -36,7 +37,7 @@ new_parse = (data) ->
     d = old_parse(data)
     console.log d
     if not d.html and d.markdown
-      d.html = window.GhostTrain.front_markdown.makeHtml(d.markdown)
+      d.html = window.GhostTrain.preview_markdown.makeHtml(d.markdown)
     d
 
 Ghost.Models.Post.prototype.parse = new_parse

@@ -1,19 +1,7 @@
 %header#global-header.navbar
-  %a.ghost-logo{"data-off-canvas" => "left", href: "http://my-ghost-blog.com", title: "http://my-ghost-blog.com"}
+  %a.ghost-logo{"data-off-canvas" => "left", href: main_app.ghost_train_path, title: "home"}
     %span.hidden Ghost
   %nav#global-nav{role: "navigation"}
     %ul#main-menu
-      %li.content.active
-        = link_to 'Content', posts_path
-      %li.editor
-        = link_to 'New Post', new_post_path
-      %li#usermenu.subnav
-        %a.dropdown{"data-toggle" => "ul", href: "#"}
-          %img.avatar{alt: "Avatar", src: "#"}
-          %span.name UserName
-        %ul.overlay{style: "display: none;"}
-          %li.usermenu-profile
-            = link_to 'Your Profile', (main_app.respond_to?(:user_path) ? main_app.users_path : posts_path)
-          %li.divider
-          %li.usermenu-signout
-            = link_to 'Sign Out', main_app.destroy_user_session_path
+      = render :partial => 'ghost_train/shared/ghost_main_menu'
+      = render :partial => 'ghost_train/shared/ghost_user_menu'
