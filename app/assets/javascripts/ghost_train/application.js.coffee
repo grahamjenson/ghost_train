@@ -18,24 +18,20 @@
 #= require ghost_train/front_markdown
 #= require ghost_train/editor_markdown
 #= require ghost_train/preview_markdown
-#= require customizations
 #= require_self
+#= require customizations
 
-window.JST = {}
-_.map(HandlebarsTemplates, (v,k) ->  JST[k.replace(/^ghost\/core\/client\/tpl\//,'')] = v;);
 
 #_.HandlebarsTemplates['ghost/client/tpl/forgotten']()
 $('body').addClass('editor')
-console.log('init');
 
 
-##THIS IS HORRIBLE -- graham
+##THIS IS HORRIBLE but will be executed before ghost is inited -- graham
 
 old_parse = Ghost.Models.Post.prototype.parse
 
 new_parse = (data) ->
     d = old_parse(data)
-    console.log d
     if not d.html and d.markdown
       d.html = window.GhostTrain.preview_markdown.makeHtml(d.markdown)
     d
@@ -43,3 +39,4 @@ new_parse = (data) ->
 Ghost.Models.Post.prototype.parse = new_parse
 
 Ghost.Views.Editor.prototype.initConverter = () -> window.GhostTrain.editor_markdown
+
