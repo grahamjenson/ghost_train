@@ -24,6 +24,8 @@ module GhostTrain
       Sass.load_paths << stylesheets_path("bourbon")
     end
 
+    config.assets.precompile += ['ghost/core/client/assets/fonts/icons.eot', 'ghost/core/client/assets/fonts/icons.woff', 'ghost/core/client/assets/fonts/icons.ttf', 'ghost/core/client/assets/fonts/icons.svg']
+
     config.to_prepare do
       Dir.glob(Rails.root + "app/decorators/**/*_decorator*.rb").each do |c|
         require_dependency(c)
