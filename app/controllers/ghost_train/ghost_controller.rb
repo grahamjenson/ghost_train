@@ -6,6 +6,7 @@ module GhostTrain
     #Things that shouldnt be here, but they are --graham
     def content
       @messages = get_messages
+      @adminUrl = main_app.ghost_train_path
       render 'index'
     end
 
