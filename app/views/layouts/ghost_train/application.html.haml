@@ -9,7 +9,7 @@
   %body.manage.body
     = render partial: 'layouts/ghost_train/ghost_header'
     %main#main
-      %aside#notifications
+      %aside#notifications.notifications
         = render file: 'ghost/core/server/views/partials/notifications'
       = yield
     = javascript_include_tag "ghost_train/application" 
