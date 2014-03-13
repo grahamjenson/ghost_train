@@ -45,6 +45,11 @@ module GhostTrain
       render json: post
     end
 
+    def destroy
+      post = destroy_post(params[:id])
+      render json: post
+    end
+
     def edit
       @fileStorage = !!get_uploader
       
@@ -64,23 +69,27 @@ module GhostTrain
     protected
     #required things
     def get_tags
-      raise NotImplementedError
+      raise NotImplementedError.new
     end
 
     def get_posts
-      raise NotImplementedError
+      raise NotImplementedError.new
     end
 
     def get_post(id)
-      raise NotImplementedError
+      raise NotImplementedError.new
     end
 
     def update_post(id, params)
-      raise NotImplementedError
+      raise NotImplementedError.new
     end
 
     def create_post(params)
-      raise NotImplementedError
+      raise NotImplementedError.new
+    end
+
+    def destroy_post(id)
+      raise NotImplementedError.new
     end
 
     def get_messages
